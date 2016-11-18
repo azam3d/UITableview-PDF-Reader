@@ -8,16 +8,31 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
+    var document: PdfDocument!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        tableView.contentInset = UIEdgeInsetsMake(UIApplication.shared.statusBarFrame.size.height, 0.0, 0.0, 0.0)
+        tableView.register(UINib.init(nibName: "PdfView", bundle: nil), forCellReuseIdentifier: "cell")
+        tableView.rowHeight = view.bounds.height
+        tableView.allowsSelection = false
+        
+        let documentURL = Bundle.main.url(forResource: "apple", withExtension: "pdf")!
+        document = PdfDocument(fileUrl: documentURL)
+        
+        print(document.pageCount)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PdfTableViewCell
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return document.pageCount
     }
 
 
