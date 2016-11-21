@@ -15,30 +15,31 @@ class PdfView: UIView {
     init(frame: CGRect, scale: CGFloat, newPage: CGPDFPage) {
         myScale = scale
         leftPdfPage = newPage
-        print("init pdfview")
         
         super.init(frame: frame)
-        backgroundColor = UIColor.cyan
+        
+        let tiledLayer = self.layer as? CATiledLayer
+        tiledLayer?.levelsOfDetail = 16
+        tiledLayer?.levelsOfDetailBias = 15
+        tiledLayer?.tileSize = CGSize(width: 1024, height: 1024)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override class var layerClass: AnyClass {
+        return CATiledLayer.self
+    }
+    
     override func draw(_ layer: CALayer, in con: CGContext) {
-        print("draw")
         guard let leftPdfPage = leftPdfPage else { return }
         
-        // Fill the background with white.
         con.setFillColor(red: 1, green: 1, blue: 1, alpha: 1)
         con.fill(bounds)
-        
         con.saveGState()
-        // Flip the context so that the PDF page is rendered right side up.
         con.translateBy(x: 0, y: bounds.size.height)
         con.scaleBy(x: 1, y: -1)
-        
-        // Scale the context so that the PDF page is rendered at the correct size for the zoom level.
         con.scaleBy(x: myScale, y: myScale)
         con.drawPDFPage(leftPdfPage)
         con.restoreGState()
