@@ -45,4 +45,10 @@ class PdfView: UIView {
         con.restoreGState()
     }
 
+    deinit {
+        leftPdfPage = nil
+        layer.contents = nil
+        layer.delegate = nil
+        layer.removeFromSuperlayer()
+    }
 }

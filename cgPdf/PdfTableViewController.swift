@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class PdfTableViewController: UITableViewController {
     var document: PdfDocument!
 
     override func viewDidLoad() {

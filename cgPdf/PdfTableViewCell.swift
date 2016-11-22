@@ -13,6 +13,15 @@ class PdfTableViewCell: UITableViewCell {
     var pdfView: PdfView!
     var row: Int?
     private var document: PdfDocument!
+    
+    var scrollView: PdfScrollView? {
+        didSet {
+            subviews.forEach{ $0.removeFromSuperview() }
+            if let scrollView = scrollView {
+                addSubview(scrollView)
+            }
+        }
+    }
 
     init(style: UITableViewCellStyle, reuseIdentifier: String?, row: Int, frame: CGRect) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -46,8 +55,6 @@ class PdfTableViewCell: UITableViewCell {
         print("pageRect width: \(pageRect.width)")
         print("pageRect height: \(pageRect.height)")
         
-//        pageRect = CGRect(x: 0.0, y: 0.0, width: 300, height: 300)
-        pdfView = PdfView(frame: pageRect, scale: scale, newPage: pdfPage)
-        addSubview(pdfView)
+        scrollView = PdfScrollView(frame: pageRect, document: document, pageNumber: pageNumber)
     }
 }

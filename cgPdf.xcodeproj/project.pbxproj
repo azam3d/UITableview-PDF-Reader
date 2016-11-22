@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7BE682341DDC609C00FD2B32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE682331DDC609C00FD2B32 /* AppDelegate.swift */; };
-		7BE682361DDC609C00FD2B32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE682351DDC609C00FD2B32 /* ViewController.swift */; };
+		7BE682361DDC609C00FD2B32 /* PdfTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE682351DDC609C00FD2B32 /* PdfTableViewController.swift */; };
 		7BE682391DDC609C00FD2B32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BE682371DDC609C00FD2B32 /* Main.storyboard */; };
 		7BE6823B1DDC609C00FD2B32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BE6823A1DDC609C00FD2B32 /* Assets.xcassets */; };
 		7BE6823E1DDC609C00FD2B32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BE6823C1DDC609C00FD2B32 /* LaunchScreen.storyboard */; };
@@ -17,12 +17,13 @@
 		7BE682511DDD9B7800FD2B32 /* PdfTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE682501DDD9B7800FD2B32 /* PdfTableViewCell.swift */; };
 		7BE682551DDEA9C300FD2B32 /* PdfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE682541DDEA9C300FD2B32 /* PdfView.swift */; };
 		7BE682571DE2A61D00FD2B32 /* mongodb.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE682561DE2A61D00FD2B32 /* mongodb.pdf */; };
+		7BE682591DE2E32B00FD2B32 /* PdfScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE682581DE2E32B00FD2B32 /* PdfScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7BE682301DDC609C00FD2B32 /* cgPdf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cgPdf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BE682331DDC609C00FD2B32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7BE682351DDC609C00FD2B32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7BE682351DDC609C00FD2B32 /* PdfTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfTableViewController.swift; sourceTree = "<group>"; };
 		7BE682381DDC609C00FD2B32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7BE6823A1DDC609C00FD2B32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7BE6823D1DDC609C00FD2B32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -32,6 +33,7 @@
 		7BE682501DDD9B7800FD2B32 /* PdfTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PdfTableViewCell.swift; sourceTree = "<group>"; };
 		7BE682541DDEA9C300FD2B32 /* PdfView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PdfView.swift; sourceTree = "<group>"; };
 		7BE682561DE2A61D00FD2B32 /* mongodb.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = mongodb.pdf; sourceTree = "<group>"; };
+		7BE682581DE2E32B00FD2B32 /* PdfScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PdfScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +68,9 @@
 			children = (
 				7BE682331DDC609C00FD2B32 /* AppDelegate.swift */,
 				7BE6824C1DDD81DF00FD2B32 /* PdfDocument.swift */,
-				7BE682351DDC609C00FD2B32 /* ViewController.swift */,
+				7BE682351DDC609C00FD2B32 /* PdfTableViewController.swift */,
 				7BE682501DDD9B7800FD2B32 /* PdfTableViewCell.swift */,
+				7BE682581DE2E32B00FD2B32 /* PdfScrollView.swift */,
 				7BE682541DDEA9C300FD2B32 /* PdfView.swift */,
 				7BE682371DDC609C00FD2B32 /* Main.storyboard */,
 				7BE6823A1DDC609C00FD2B32 /* Assets.xcassets */,
@@ -154,9 +157,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BE682591DE2E32B00FD2B32 /* PdfScrollView.swift in Sources */,
 				7BE6824D1DDD81DF00FD2B32 /* PdfDocument.swift in Sources */,
 				7BE682551DDEA9C300FD2B32 /* PdfView.swift in Sources */,
-				7BE682361DDC609C00FD2B32 /* ViewController.swift in Sources */,
+				7BE682361DDC609C00FD2B32 /* PdfTableViewController.swift in Sources */,
 				7BE682511DDD9B7800FD2B32 /* PdfTableViewCell.swift in Sources */,
 				7BE682341DDC609C00FD2B32 /* AppDelegate.swift in Sources */,
 			);
